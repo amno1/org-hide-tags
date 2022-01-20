@@ -50,15 +50,16 @@
 
 (defun org-hide-tags--update-headings (visibility)
   "Update invisible property to VISIBILITY for markers in the current buffer."
-  (save-excursion
-    (goto-char (point-min))
-    (with-silent-modifications
-      (while (re-search-forward org-leading-stars-re nil t)
-        (goto-char (line-end-position))
-        (if (re-search-backward org-tag-line-re (line-beginning-position) t)
-            (put-text-property
-             (match-beginning 1) (match-end 1) 'invisible visibility))
-          (forward-line)))))
+  (org-with-wide-buffer
+   (save-excursion
+     (goto-char (point-min))
+     (with-silent-modifications
+       (while (re-search-forward org-leading-stars-re nil t)
+         (goto-char (line-end-position))
+         (if (re-search-backward org-tag-line-re (line-beginning-position) t)
+             (put-text-property
+              (match-beginning 1) (match-end 1) 'invisible visibility))
+         (forward-line))))))
 
 ;;;###autoload
 (define-minor-mode org-hide-tags-mode
