@@ -27,7 +27,7 @@
 ;;; Commentary:
 
 ;; A minor mode to help reduce clutter in org-mode files by
-;; hiding/unhiding leading stars for headings in org-mode.
+;; hiding/unhiding leading tags in headings in org-mode.
 ;;
 ;; To hide all markers turn on org-hbm-mode by
 ;;
