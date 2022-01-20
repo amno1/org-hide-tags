@@ -9,7 +9,7 @@
   introduced with leading stars. That may or may not be a dealbreaker for some
   use-cases.
 
-* Installation  
+* Installation
 
   Either clone this repo or just download 'org-hide-tags.el'.
 
